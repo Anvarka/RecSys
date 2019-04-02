@@ -1,0 +1,8 @@
+f = open("input.txt")
+s = f.readline()
+t = f.readline()
+sum = 0
+for i in range(len(s)):
+    if t[i] != s[i]:
+        sum += 1
+print(sum)
