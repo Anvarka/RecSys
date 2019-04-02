@@ -1,0 +1,57 @@
+a = [[]]
+f = open("input.txt")
+s = ""
+name1 = []
+l = []
+i = 0
+A=[]
+T=[]
+C=[]
+G=[]
+s_a = 0
+s_t = 0
+s_g = 0
+s_c = 0
+
+for line in f.readlines():
+    if line[0] != ">":
+        s += line.replace("\n","")
+    else:
+        name1.append(line)
+        if s != "":
+            l.append(s)
+            p = len(s)
+            s = ""
+l.append(s)
+print(len(l))
+
+for i in range(p):
+    for j in range(len(name1)):
+        if l[j][i] == "A":
+            s_a += 1
+        if l[j][i] == "T":
+            s_t += 1
+        if l[j][i] == "C":
+            s_c += 1
+        if l[j][i] == "G":
+            s_g += 1
+    A.append(s_a)
+    T.append(s_t)
+    G.append(s_g)
+    C.append(s_c)
+    s_a = 0
+    s_t = 0
+    s_g = 0
+    s_c = 0
+for i in A:
+    print(i, end=" ")
+print("\n")
+for i in C:
+    print(i, end=" ")
+print("\n")
+for i in G:
+    print(i, end=" ")
+print("\n")
+for i in T:
+    print(i, end=" ")
+print("\n")
